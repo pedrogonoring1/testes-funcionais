@@ -12,6 +12,12 @@
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
+Cypress.Commands.add('login', (username, password) => {
+    cy.visit('https://aluno.uvv.br/Login');
+    cy.get('#Matricula').type(username);
+    cy.get('#Password').type(password);
+    cy.get('button').click();
+})
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
