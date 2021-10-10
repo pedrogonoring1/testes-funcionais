@@ -9,10 +9,11 @@ context('Visualizar Link da Aula', () => {
         cy.login(credenciais.matricula, credenciais.senha);
     })
 
-    it('Deve executar alguma coisa com sucesso', () => {
-     
+    it('Deve pegar o link de uma aula ao vivo', () => {
+        cy.get('#side-menu > li:nth-child(6)').click()
+        cy.get('#calendar > div.fc-view-container > div > div > table > tbody > tr:nth-child(2)').click()
+        cy.get("#irPraAula").click()
         // Tira print da tela
         cy.screenshot();
     });
 })
-  
