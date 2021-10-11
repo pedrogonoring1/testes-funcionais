@@ -9,7 +9,10 @@ context('Visualizar Dados Pessoais', () => {
         cy.login(credenciais.matricula, credenciais.senha);
     })
 
-    it('Deve executar alguma coisa com sucesso', () => {
+    it('Visualizar os Dados Pessoais', () => {
+        //Apos a Autenticação e chegar na Pagian Inicial do Portal do ALuno, Selecionamos o 
+        //Campo Dados Pessoais.
+        cy.get('#side-menu > :nth-child(3) > a').click()
      
         // Tira print da tela
         cy.screenshot();
